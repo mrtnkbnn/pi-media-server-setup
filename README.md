@@ -4,7 +4,7 @@ Docker Compose configuration which runs [Jellyfin], [Radarr], [Sonarr], [Bazarr]
 
 Directories defined in the environment file (see `.env.example`) must be created in advance.
 
-I'm currently running this on [Raspberry Pi 4 Model B] (8GB RAM).
+I'm currently running this on [Raspberry Pi 4 Model B] (8GB RAM), using Ubuntu 22.04 LTS with preconfigured VPN client (auto-connect + kill switch).
 
 Be aware that media using [HEVC/H.265] codec can cause issues because decoding it in real time is really CPU heavy and Pi cannot really handle it. In addition, the current setup does not take advantage of hard links and is using double disk space for downloaded media and for media it is seeding.
 
