@@ -1,0 +1,95 @@
+events {}
+
+http {
+
+  server {
+    listen 80 default_server;
+    server_name _;
+    return 301 https://$host$request_uri;
+  }
+
+  server {
+    listen 443 ssl;
+    server_name jellyfin.mrtnkbnn.ee;
+
+    ssl_certificate /root/server.crt;
+    ssl_certificate_key /root/server.key;
+
+    location / {
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_pass http://jellyfin:8096;
+    }
+  }
+
+  server {
+    listen 443 ssl;
+    server_name radarr.mrtnkbnn.ee;
+
+    ssl_certificate /root/server.crt;
+    ssl_certificate_key /root/server.key;
+
+    location / {
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_pass http://radarr:7878;
+    }
+  }
+
+  server {
+    listen 443 ssl;
+    server_name sonarr.mrtnkbnn.ee;
+
+    ssl_certificate /root/server.crt;
+    ssl_certificate_key /root/server.key;
+
+    location / {
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_pass http://sonarr:8989;
+    }
+  }
+
+  server {
+    listen 443 ssl;
+    server_name bazarr.mrtnkbnn.ee;
+
+    ssl_certificate /root/server.crt;
+    ssl_certificate_key /root/server.key;
+
+    location / {
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_pass http://bazarr:6767;
+    }
+  }
+
+  server {
+    listen 443 ssl;
+    server_name prowlarr.mrtnkbnn.ee;
+
+    ssl_certificate /root/server.crt;
+    ssl_certificate_key /root/server.key;
+
+    location / {
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_pass http://prowlarr:9696;
+    }
+  }
+
+  server {
+    listen 443 ssl;
+    server_name deluge.mrtnkbnn.ee;
+
+    ssl_certificate /root/server.crt;
+    ssl_certificate_key /root/server.key;
+
+    location / {
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_pass http://deluge:8112;
+    }
+  }
+
+}
