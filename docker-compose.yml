@@ -26,11 +26,14 @@ services:
     restart: unless-stopped
     environment:
       - TZ=${TIMEZONE}
+      - PUID=${PUID}
+      - PGID=${PGID}
     volumes:
       - jellyfin_data:/config
       - ${MOVIES_DIR}:/data/movies
       - ${TVSHOWS_DIR}:/data/tvshows
     ports:
+      - 8096:8096
       - 8920:8920
       - 7359:7359/udp
       - 1900:1900/udp
@@ -40,6 +43,8 @@ services:
     restart: unless-stopped
     environment:
       - TZ=${TIMEZONE}
+      - PUID=${PUID}
+      - PGID=${PGID}
     volumes:
       - radarr_data:/config
       - ${MOVIES_DIR}:/movies
@@ -50,6 +55,8 @@ services:
     restart: unless-stopped
     environment:
       - TZ=${TIMEZONE}
+      - PUID=${PUID}
+      - PGID=${PGID}
     volumes:
       - sonarr_data:/config
       - ${TVSHOWS_DIR}:/tv
@@ -60,6 +67,8 @@ services:
     restart: unless-stopped
     environment:
       - TZ=${TIMEZONE}
+      - PUID=${PUID}
+      - PGID=${PGID}
     volumes:
       - bazarr_data:/config
       - ${MOVIES_DIR}:/movies
@@ -70,6 +79,8 @@ services:
     restart: unless-stopped
     environment:
       - TZ=${TIMEZONE}
+      - PUID=${PUID}
+      - PGID=${PGID}
     volumes:
       - prowlarr_data:/config
   deluge:
@@ -78,6 +89,8 @@ services:
     restart: unless-stopped
     environment:
       - TZ=${TIMEZONE}
+      - PUID=${PUID}
+      - PGID=${PGID}
     volumes:
       - deluge_data:/config
       - ${DOWNLOADS_DIR}:/downloads
