@@ -12,8 +12,8 @@ http {
     listen 443 ssl;
     server_name jellyfin.mrtnkbnn.ee;
 
-    ssl_certificate /root/server.crt;
-    ssl_certificate_key /root/server.key;
+    ssl_certificate /etc/nginx/certs/jellyfin.mrtnkbnn.ee.crt;
+    ssl_certificate_key /etc/nginx/certs/jellyfin.mrtnkbnn.ee.key;
 
     location / {
       proxy_set_header Host $host;
@@ -26,8 +26,8 @@ http {
     listen 443 ssl;
     server_name radarr.mrtnkbnn.ee;
 
-    ssl_certificate /root/server.crt;
-    ssl_certificate_key /root/server.key;
+    ssl_certificate /etc/nginx/certs/radarr.mrtnkbnn.ee.crt;
+    ssl_certificate_key /etc/nginx/certs/radarr.mrtnkbnn.ee.key;
 
     location / {
       proxy_set_header Host $host;
@@ -40,8 +40,8 @@ http {
     listen 443 ssl;
     server_name sonarr.mrtnkbnn.ee;
 
-    ssl_certificate /root/server.crt;
-    ssl_certificate_key /root/server.key;
+    ssl_certificate /etc/nginx/certs/sonarr.mrtnkbnn.ee.crt;
+    ssl_certificate_key /etc/nginx/certs/sonarr.mrtnkbnn.ee.key;
 
     location / {
       proxy_set_header Host $host;
@@ -54,8 +54,8 @@ http {
     listen 443 ssl;
     server_name bazarr.mrtnkbnn.ee;
 
-    ssl_certificate /root/server.crt;
-    ssl_certificate_key /root/server.key;
+    ssl_certificate /etc/nginx/certs/bazarr.mrtnkbnn.ee.crt;
+    ssl_certificate_key /etc/nginx/certs/bazarr.mrtnkbnn.ee.key;
 
     location / {
       proxy_set_header Host $host;
@@ -68,8 +68,8 @@ http {
     listen 443 ssl;
     server_name prowlarr.mrtnkbnn.ee;
 
-    ssl_certificate /root/server.crt;
-    ssl_certificate_key /root/server.key;
+    ssl_certificate /etc/nginx/certs/prowlarr.mrtnkbnn.ee.crt;
+    ssl_certificate_key /etc/nginx/certs/prowlarr.mrtnkbnn.ee.key;
 
     location / {
       proxy_set_header Host $host;
@@ -82,8 +82,8 @@ http {
     listen 443 ssl;
     server_name deluge.mrtnkbnn.ee;
 
-    ssl_certificate /root/server.crt;
-    ssl_certificate_key /root/server.key;
+    ssl_certificate /etc/nginx/certs/deluge.mrtnkbnn.ee.crt;
+    ssl_certificate_key /etc/nginx/certs/deluge.mrtnkbnn.ee.key;
 
     location / {
       proxy_set_header Host $host;

@@ -15,8 +15,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./server.crt:/root/server.crt
-      - ./server.key:/root/server.key
+      - ./certs:/etc/nginx/certs
     ports:
       - 80:80
       - 443:443
